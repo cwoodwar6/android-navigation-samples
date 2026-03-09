@@ -26,3 +26,13 @@ jobs:
       run: cd map-sample && ./gradlew build
     - name: Build navigation-sample with Gradle
       run: cd navigation-sample && ./gradlew build
+    - name: Calculate map-sample APK size difference
+      id: size-diff-map
+      uses: jacobras/size-diff-action@v2
+      with:
+        path: map-sample/app/build/outputs/apk/release/app-release-unsigned.apk
+    - name: Calculate navigation-sample APK size difference
+      id: size-diff-navigation
+      uses: jacobras/size-diff-action@v2
+      with:
+        path: navigation-sample/app/build/outputs/apk/release/app-release-unsigned.apk
