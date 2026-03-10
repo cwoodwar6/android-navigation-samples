@@ -41,9 +41,9 @@ android {
         targetSdkVersion 36
         versionCode 1
         versionName "1.0"
-        // Set this to the languages you actually use, otherwise you'll include resource strings
+        resourceConfigurations += ['en']
+// Set this to the languages you actually use, otherwise you'll include resource strings
         // for all Navigation SDK supported languages.
-        resConfigs "en"
         multiDexEnabled true
     }
 
@@ -59,7 +59,7 @@ android {
         // instead.
         all {
             minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
